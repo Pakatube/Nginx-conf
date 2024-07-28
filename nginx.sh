@@ -11,3 +11,4 @@ apt-mark hold nginx* libnginx*
 wget https://raw.githubusercontent.com/Pakatube/Nginx-conf/main/nginx.conf -O /etc/nginx/nginx.conf
 systemctl restart nginx
 iptables -t nat -A PREROUTING -p tcp --dport 444:6666 -j REDIRECT --to-port 65001
+ip6tables -t nat -A PREROUTING -p tcp --dport 444:6666 -j REDIRECT --to-port 65001
