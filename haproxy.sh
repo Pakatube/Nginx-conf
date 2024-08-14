@@ -1,7 +1,7 @@
 #!/bin/sh
 apt install -y haproxy
-wget https://raw.githubusercontent.com/Pakatube/Nginx-conf/main/nginx.conf -O /etc/nginx/nginx.conf
-systemctl restart nginx
+wget https://raw.githubusercontent.com/Pakatube/Nginx-conf/main/haproxy.cfg -O /etc/haproxy/haproxy.cfg
+systemctl restart haproxy
 cat > /etc/rc.local << EOF
 #!/bin/bash
 iptables -F -t nat
