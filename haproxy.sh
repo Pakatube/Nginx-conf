@@ -11,3 +11,5 @@ ip6tables -t nat -A PREROUTING -p tcp --dport 40000:50000 -j REDIRECT --to-port 
 exit 0
 EOF
 chmod +x /etc/rc.local && /etc/rc.local
+apt-get install cron -y
+(crontab -l 2>/dev/null; echo "*/10 * * * * /usr/sbin/service haproxy reload") | crontab -
