@@ -1,4 +1,5 @@
 #!/bin/sh
+apt update
 apt install -y haproxy
 wget https://raw.githubusercontent.com/Pakatube/Nginx-conf/main/haproxy.cfg -O /etc/haproxy/haproxy.cfg
 systemctl restart haproxy
