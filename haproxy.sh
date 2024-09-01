@@ -13,4 +13,10 @@ exit 0
 EOF
 chmod +x /etc/rc.local && /etc/rc.local
 apt-get install cron -y
-(crontab -l 2>/dev/null; echo "*/10 * * * * wget -q -O /etc/haproxy/haproxy.cfg https://raw.githubusercontent.com/Pakatube/Nginx-conf/main/haproxy.cfg && service haproxy reload") | crontab -
+cat > /usr/local/bin/update-haproxy.sh << EOF
+#!/bin/bash
+wget -O /etc/haproxy/haproxy.cfg https://raw.githubusercontent.com/Pakatube/Nginx-conf/main/haproxy.cfg
+service haproxy reload
+EOF
+chmod +x /usr/local/bin/update-haproxy.sh
+(crontab -l; echo "*/10 * * * * /usr/local/bin/update-haproxy.sh") | crontab -
