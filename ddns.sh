@@ -49,8 +49,8 @@ do
 done
 curl -fsSL https://get.docker.com | sh
 docker run -d --restart=always --net=host \
-    -e "AKID=" \
-    -e "AKSCT=" \
+    -e "AKID=$ACCESS_KEY_ID" \
+    -e "AKSCT=$ACCESS_SECRET" \
     -e "DOMAIN=$RR.node-is.green" \
     -e "REDO=30" \
     -e "TTL=1" \
