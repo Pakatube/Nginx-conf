@@ -48,7 +48,7 @@ do
   esac
 done
 curl -fsSL https://get.docker.com | sh
-docker run -d --restart=always --net=host \
+docker run -d --restart=always --name ddns --net=host \
     -e "AKID=$ACCESS_KEY_ID" \
     -e "AKSCT=$ACCESS_SECRET" \
     -e "DOMAIN=$RR.node-is.green" \
