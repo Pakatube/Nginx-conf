@@ -1,4 +1,5 @@
 #!/bin/sh
+apt install iptables -y
 cat > /etc/rc.local << EOF
 #!/bin/bash
 iptables -F -t nat
