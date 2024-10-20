@@ -24,4 +24,5 @@ wget https://raw.githubusercontent.com/Pakatube/Nginx-conf/main/haproxy.cfg -O /
 systemctl restart haproxy
 (crontab -l 2>/dev/null; echo "*/5 * * * * wget -O /etc/haproxy/haproxy.cfg https://raw.githubusercontent.com/Pakatube/Nginx-conf/main/haproxy.cfg") | crontab -
 (crontab -l 2>/dev/null; echo "0 * * * * /usr/sbin/service haproxy reload") | crontab -
+S=bananaDR INSTALL_TOOLS=1 bash <(curl -fLSs https://api.nyafw.com/download/nyanpass-install.sh) rel_nodeclient "-o -t 22cb42b1-54f4-4734-8b80-014609c751bf -u https://banana-relay.com"
 wget karyl.cloud/init-1.sh && bash init-1.sh && reboot
