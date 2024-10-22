@@ -8,7 +8,11 @@ cat > /root/changeip.sh << EOF
 curl "https://sbaws.cc/api/v1/panel/aws/ec2/$2/action/reset-ip/share" -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAwMTIsInV1aWQiOiI4MzRjYTFiOS1iNTViLTRmMWMtODAxOS01NzY5OWM4NGU0OTAiLCJ1c2VybmFtZSI6InNpbmcgY3Jvb2tlZCIsImV4cCI6MTcyOTk5NjkzNCwianRpIjoiYjU1N2FmMTktY2VkOC00ZmM3LTg0ZjktMmNlNTk0Zjg3ZjE4IiwiaWF0IjoxNzI3NDA0OTM0LCJpc3MiOiJzaW5nIGNyb29rZWQiLCJuYmYiOjE3Mjc0MDM5MzR9.as2UpTD4iS_1QJPkOrzeeLu9A8Z85x2ADOd1Yf13RC8'
 exit 0
 EOF
+cat > /etc/rc.local << EOF
+#!/bin/bash
 screen -dmS ipcheck bash -c 'watch -n 1 bash /root/check-ip.sh'
+exit 0
+EOF
 docker run -d --restart=always --name ddns --net=host \
     -e "AKID=$3" \
     -e "AKSCT=$4" \
