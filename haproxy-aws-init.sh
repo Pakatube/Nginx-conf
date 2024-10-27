@@ -5,7 +5,7 @@ wget -qO- https://get.docker.com/ | sh
 wget https://raw.githubusercontent.com/Pakatube/Nginx-conf/refs/heads/main/check-ip.sh
 cat > /root/changeip.sh << EOF
 #!/bin/bash
-curl "https://sbaws.cc/api/v1/panel/aws/ec2/$2/action/reset-ip/share" -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAwMTIsInV1aWQiOiI4MzRjYTFiOS1iNTViLTRmMWMtODAxOS01NzY5OWM4NGU0OTAiLCJ1c2VybmFtZSI6InNpbmcgY3Jvb2tlZCIsImV4cCI6MTcyOTk5NjkzNCwianRpIjoiYjU1N2FmMTktY2VkOC00ZmM3LTg0ZjktMmNlNTk0Zjg3ZjE4IiwiaWF0IjoxNzI3NDA0OTM0LCJpc3MiOiJzaW5nIGNyb29rZWQiLCJuYmYiOjE3Mjc0MDM5MzR9.as2UpTD4iS_1QJPkOrzeeLu9A8Z85x2ADOd1Yf13RC8'
+curl "https://sbaws.cc/api/v1/panel/aws/ec2/$2/action/reset-ip/share" -H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAwMTIsInV1aWQiOiI4MzRjYTFiOS1iNTViLTRmMWMtODAxOS01NzY5OWM4NGU0OTAiLCJ1c2VybmFtZSI6InNpbmcgY3Jvb2tlZCIsImV4cCI6MTczMjU5NjkwOSwianRpIjoiNzAyYTQwMTEtNTU3My00ZWUzLThmYmMtZjczZWQ3ZDE5ZmI3IiwiaWF0IjoxNzMwMDA0OTA5LCJpc3MiOiJzaW5nIGNyb29rZWQiLCJuYmYiOjE3MzAwMDM5MDl9.o88Pg9L7i2bLU5LLxTlpNN1LGcbW7uMDjCYyJjGQu64'
 exit 0
 EOF
 cat > /etc/rc.local << EOF
