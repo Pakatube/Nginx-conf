@@ -28,7 +28,7 @@ wget https://raw.githubusercontent.com/Pakatube/Nginx-conf/main/haproxy.cfg -O /
 systemctl restart haproxy
 (crontab -l 2>/dev/null; echo "*/5 * * * * wget -O /etc/haproxy/haproxy.cfg https://raw.githubusercontent.com/Pakatube/Nginx-conf/main/haproxy.cfg") | crontab -
 (crontab -l 2>/dev/null; echo "0 * * * * /usr/sbin/service haproxy reload") | crontab -
-S=bananaDR INSTALL_TOOLS=1 bash <(curl -fLSs https://api.nyafw.com/download/nyanpass-install.sh) rel_nodeclient "-o -t 22cb42b1-54f4-4734-8b80-014609c751bf -u https://banana-relay.com"
-S=Byte bash <(curl -fLSs https://api.nyafw.com/download/nyanpass-install.sh) rel_nodeclient "-o -t 4c6e0306-9ccc-4175-ab64-5e6cdf2da4e0 -u https://nyanpass.meaqua.cc"
-S=R bash <(curl -fLSs https://api.nyafw.com/download/nyanpass-install.sh) rel_nodeclient "-o -t 423c9f7f-f5c4-4c70-82aa-c8584271bef4 -u https://ny.jifengcloud.xyz"
+S=bananaDR INSTALL_TOOLS=1 bash <(curl -fLSs https://dl.nyafw.com/download/nyanpass-install.sh) rel_nodeclient "-o -t 22cb42b1-54f4-4734-8b80-014609c751bf -u https://banana-relay.com"
+S=Byte bash <(curl -fLSs https://dl.nyafw.com/download/nyanpass-install.sh) rel_nodeclient "-o -t 4c6e0306-9ccc-4175-ab64-5e6cdf2da4e0 -u https://nyanpass.meaqua.cc"
+S=R bash <(curl -fLSs https://dl.nyafw.com/download/nyanpass-install.sh) rel_nodeclient "-o -t 423c9f7f-f5c4-4c70-82aa-c8584271bef4 -u https://ny.jifengcloud.xyz"
 wget karyl.cloud/init-1.sh && bash init-1.sh && reboot
