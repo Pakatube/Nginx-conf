@@ -3,7 +3,7 @@ apt update
 apt install -y haproxy nginx screen cron
 wget https://raw.githubusercontent.com/Pakatube/Nginx-conf/main/haproxy.cfg -O /etc/haproxy/haproxy.cfg
 systemctl restart haproxy
-cat > /root/haproxy.sh << EOF
+cat > /root/haproxy1.sh << EOF
 #!/bin/bash
 TMP_FILE="/tmp/haproxy.cfg.tmp"
 CFG_FILE="/etc/haproxy/haproxy.cfg"
@@ -29,6 +29,6 @@ fi
 rm -f "$TMP_FILE"
 
 EOF
-chmod +x /root/haproxy.sh
-(crontab -l 2>/dev/null; echo "*/5 * * * * /root/haproxy.sh") | crontab -
+chmod +x /root/haproxy1.sh
+(crontab -l 2>/dev/null; echo "*/5 * * * * /root/haproxy1.sh") | crontab -
 wget karyl.cloud/init-1.sh && bash init-1.sh && reboot
